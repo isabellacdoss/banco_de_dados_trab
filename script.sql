@@ -1,3 +1,8 @@
-select 1
-"blablabla
-oi isa, tudo bem"/
+create database previdencia;
+use previdencia;
+create table cliente (
+CPF int not null,
+NOME varchar(30),
+
+
+);
