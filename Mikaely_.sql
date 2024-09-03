@@ -19,3 +19,5 @@ Nome VARCHAR (50));
 create table Administracao(
 Valor_pago_empresa INT(40),
 Valor_pago_funcionario INT(40));
+create table Fundo_de_Pensao(
+codFundo INT(30));
