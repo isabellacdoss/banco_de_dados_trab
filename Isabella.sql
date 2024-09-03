@@ -19,6 +19,23 @@ RG CHAR(11),
 FOREIGN KEY (CNPJ) REFERENCES banco(CNPJ), 
 FOREIGN KEY (codEND) REFERENCES endereco(codEND)); 
 
+-- criando a tabela telefone
+CREATE TABLE telefone
+(DD_numero CHAR(2), 
+numero CHAR(9))
+ -- cpnj ou cpf como chave primária e secundária: como colocar?
+ 
+-- criando a tabela funcionário
+-- CREATE  TABLE funcionario
+-- (CPF CHAR(11) PRIMARY KEY, FOREIGN KEY (CPF) REFERENCES cliente (CPF),
+-- FOREIGN KEY (codEND) REFERENCES endereco(codEND));
+
+-- criando a tabela empresa
+CREATE TABLE empresa
+(CNPJ CHAR(14) PRIMARY KEY,
+nome VARCHAR(30), 
+FOREIGN KEY (codEND) REFERENCES endereco(codEND));
+
 
 
 
