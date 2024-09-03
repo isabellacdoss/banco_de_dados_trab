@@ -11,13 +11,15 @@ CEP CHAR(8),
 logradouro VARCHAR (20),
 estado VARCHAR (20));
 
--- criando a tabela cliente
+-- criando a tabela cliente 
 CREATE TABLE cliente
 (CPF CHAR(11), 
 nome VARCHAR(50),
 RG CHAR(11),
-FOREIGN KEY (CNPJ) REFERENCES banco(CNPJ), 
+FOREIGN KEY (CNPJ) REFERENCES banco(CNPJ),  -- a tabela banco é da mika
 FOREIGN KEY (codEND) REFERENCES endereco(codEND)); 
+
+
 
 -- criando a tabela telefone
 CREATE TABLE telefone
