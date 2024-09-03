@@ -30,11 +30,14 @@ DDD_numero INT(2),
 numero INT(9)
 );
  -- cpnj ou cpf como chave primária e secundária: como colocar?
+ -- adicinar como:
+ -- ALTER TABLE telefone
+ -- ADD CONTRAINT FOREIGN KEY 
  
  -- criando a tabela funcionário
  CREATE TABLE funcionario (
 CPF INT(11) PRIMARY KEY, 
-FOREIGN KEY (CPF) REFERENCES cliente (CPF),
+FOREIGN KEY (CPF) REFERENCES cliente (CPF));
 -- FOREIGN KEY (codEND) REFERENCES endereco(codEND));
 
 -- criando a tabela empresa
