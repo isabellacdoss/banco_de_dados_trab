@@ -1,4 +1,3 @@
-use Mikaely_;
 create database Previdencia;
 create table Banco(
 CNPJ INT (14),
