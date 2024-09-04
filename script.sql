@@ -119,7 +119,7 @@ FOREIGN KEY (codEND) REFERENCES endereco(codEND);
 -- Criando tabela associado:
 CREATE TABLE associado(
 	CPF_ass CHAR(11) PRIMARY KEY,
-    Renda DECIMAL(7,2) NOT NULL,
+    renda DECIMAL(7,2) NOT NULL,
     codEND INT NOT NULL,
     CNPJ_assoc CHAR(14) NOT NULL
 ); 
