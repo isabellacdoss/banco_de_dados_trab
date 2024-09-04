@@ -63,8 +63,8 @@ VALUES
 (34691222902, 'Thiago Nascimento Pereira', 8493726),
 (45702468013, 'Eduardo Gomes Barros', 5738294),
 (56813879124, 'Carolina Fernandes Dias', 7394825),
-(67924680235, 'André Silva Oliveira', 6384927),
-(79035791346, 'Fernanda Duarte Mendes', 9482736),
+(68846002305, 'André Silva Oliveira', 6384927),
+(79000791346, 'Fernanda Duarte Mendes', 9482736),
 (98986802457, 'Lucas Rocha Nogueira', 8394725),
 (91257917768, 'Juliana Araújo Lima', 7492831),
 (99999924679, 'Rodrigo Ribeiro Costa', 6482913),
@@ -76,9 +76,9 @@ VALUES
 (68924680235, 'Hugo Martins Silva', 6394827),
 (90935791346, 'Paulo Henrique Gomes', 7482935),
 (80146802457, 'Renata Duarte Lima', 9374826),
-(91257913568, 'Adriana Sousa Ferreira', 8374926),
+(91299993568, 'Adriana Sousa Ferreira', 8374926),
 (02368024679, 'Matheus Rodrigues Pinto', 9374815),
-(13479135780, 'Isabela Rocha Souza', 8374923);
+(13488835780, 'Isabela Rocha Souza', 8374923);
 
 
 
