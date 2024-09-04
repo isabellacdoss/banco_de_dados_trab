@@ -1,4 +1,4 @@
--- CRIANDO BANCO DE DADOS
+-- criando banco de dados
 CREATE DATABASE IF NOT EXISTS previdencia;
 
 -- criando tabelas:
@@ -15,7 +15,7 @@ create table endereco (
 
 -- criando tabela de banco_corretora
  create table banco (
-	CNPJ INT (14) PRIMARY KEY,
+	CNPJ CHAR(14) PRIMARY KEY,
 	nome VARCHAR (50) NOT NULL UNIQUE,
 	codEND int not null
 );
@@ -153,24 +153,33 @@ foreign key (CNPJ_assoc) references associacao(CNPJ);
 create table fundopensao(
 	codFundo INT(30) PRIMARY KEY,
 	codPrevidencia INT(40) NOT NULL,
-    CNPJ_EA INT(14) NOT NULL,
-	foreign key (codprevidencia) references previdencia_privada(codprevidencia)
+    CNPJ_empresa CHAR(14),
+    CNPJ_associacao CHAR(14)
 );
 -- adicionando chave estrangeira codPrevidencia de previdenciaP em fundopensao
 alter table fundopensao
 add constraint FK_fundopensao_previdenciaP
 foreign key (codPrevidencia) references previdenciaP(codPrevidencia);
--- adicionando chave estrangeira CNPJ 
--- ainda nao terminei!!!!!!!!!!!!! PAREI AQUI
+-- adicionando chave estrangeira CNPJ de empresa em fundopensao
+alter table fundopensao
+add constraint FK_fundopensao_empresa
+foreign key (CNPJ_empresa) references empresa(CNPJ);
+-- adicionando chave estrangeira CNPJ de associacao em fundopensao
+alter table fundopensao
+add constraint FK_fundopensao_associacao
+foreign key (CNPJ_associacao) references associacao(CNPJ);
 
 -- criando tabela administracao
 create table administracao(
--- cpf/cnpj tem de ser PK E FK
-	valor_pago_empresa INT(40),
-	valor_pago_funcionario INT(40),
-	codfundo int(30) NOT NULL,
+	CPF_func char(11) primary key,
+	valorpago_empresa decimal(10,2),
+	valorpago_funcionario decimal(10,2),
+	codFundo int(30) NOT NULL,
 	foreign key (codfundo) references fundo_de_pensao(codfundo)
     );
+alter table administracao
+add constraint FK_administracao_fundopensao
+foreign key (codFundo) references fundopensao(codFundo);
 
  
  -- insert into cliente 
