@@ -1,7 +1,8 @@
+
+-- Inserindo dados na tabela cliente (88 clientes):
 insert into cliente
 (CPF, nome, rg) 
-VALUES 
-(12434522238, 'Maria Clara Monteiro Santos', 2458885), 
+VALUES (12434522238, 'Maria Clara Monteiro Santos', 2458885), 
 (08207241730, 'Luiz Filippe Marcon Pereira', 9992358), 
 (18745467799, 'Carlos Oliveira Carvalho', 2784773),
 (67414913722, 'Jaci de Melo Carvalho', 8429462),
@@ -80,12 +81,10 @@ VALUES
 (02368024679, 'Matheus Rodrigues Pinto', 9374815),
 (13488835780, 'Isabela Rocha Souza', 8374923);
 
-
-
-insert into endereco (cidade, cep, logradouro, estado)
-
-VALUES 
-('Vitória', 29000094, 'Rua das Castanheiras, n°45', 'Espírito Santo'),
+-- Inserindo dados na tabela endereco (102 endereços):
+insert into endereco 
+(cidade, cep, logradouro, estado)
+VALUES  ('Vitória', 29000094, 'Rua das Castanheiras, n°45', 'Espírito Santo'),
 ('Vitória', 29030074, 'Rua Oliva, n° 20', 'Espírito Santo'),
 ('Rio de Janeiro', 13344635, 'Rua Emilio Lopes Cruz Junior, n° 30', 'Rio de Janeiro'),
 ('Vitória', 29010001, 'Centro, Avenida Jerônimo Monteiro, n° 43', 'Espírito Santo'),
@@ -189,4 +188,132 @@ VALUES
 ('Campinas', 13000000, 'Avenida Francisco Glicério, n° 789', 'São Paulo'),
 ('Sorocaba', 18010000, 'Avenida Afonso Vergueiro, n° 890', 'São Paulo');
 
+-- Inserindo dados da tabela associados (60 rendas):
+ INSERT INTO associados 
+ (renda) 
+ VALUES (1500.12),
+(3200.54),
+(2500.67),
+(4120.98),
+(13500.43),
+(2230.65),
+(1875.13),
+(4100.97),
+(5333.33),
+(2999.99),
+(5000.00),
+(9789.87),
+(3100.11),
+(4500.22),
+(5000.33),
+(3800.44),
+(4250.55),
+(10900.66),
+(12400.77),
+(4600.88),
+(4800.99),
+(20000.12),
+(3150.23),
+(4500.34),
+(4700.45),
+(13300.56),
+(3650.67),
+(3950.78),
+(7225.89),
+(6320.90),
+(2888.01),
+(3777.12),
+(3999.23),
+(4125.34),
+(4390.45),
+(2550.56),
+(2890.67),
+(3190.78),
+(3440.89),
+(5690.90),
+(4125.01),
+(4300.12),
+(1700.23),
+(3800.34),
+(2950.45),
+(3150.56),
+(3999.67),
+(9230.78),
+(4560.89),
+(4850.90),
+(4900.01),
+(24999.12),
+(5100.23),
+(5300.34),
+(11500.45),
+(6700.56),
+(7900.67);
 
+-- Inserindo dados da tabela funcionários (60 rendas):
+ INSERT INTO funcionario
+ (salario) 
+ VALUES (2500,00),
+ (5000.50),
+ (10065.89),
+ (3560,00),
+ (23250,00),
+ (11000.50),
+ (12),
+ (),
+ (),
+ (),
+ (),
+ (),
+ (),
+ (),
+ (),
+ (),
+ (),
+ (),
+ (),
+ (),
+ (),
+ (),
+ (),
+ (),
+ (),
+ (),
+ (),
+ (),
+ (),
+
+ 
+
+-- Inserindo dados da tabela empresa (16 rendas):
+ INSERT INTO empresa(cnpj, nome) VALUES
+('12345678000191', 'Empresa Alfa LTDA'),
+('23456789000182', 'Beta Consultoria e Associados'),
+('34567890000173', 'Gamma Soluções Ltda'),
+('45678901000164', 'Delta Comércio e Serviços'),
+('67890123000146', 'Zeta Logística LTDA'),
+('78901234000137', 'Tesk Tecnologia S.A.'),
+('01234567000101', 'Kappa Empreendimentos'),
+('12345678000112', 'Pretti Produções LTDA'),
+('78901234000178', 'Rho Energia e Soluções'),
+('89012345000189', 'Sigma Educacional S.A.'),
+('90123456000190', 'Tau Varejo e Atacado'),
+('01234567000192', 'Imobiliária'),
+('23456789000114', 'Lugui Alimentos LTDA'),
+('45678901000136', 'Omega Produções'),
+('67890123000158', 'Lage Comércio Exterior'),
+('90123456000181', 'Carvalho Consultoria Jurídica');
+
+-- Inserindo dados na tabela banco;
+INSERT INTO bancos (nome, cnpj) VALUES
+('Banco Fictício Nacional S.A.', '12345678000110'),
+('Banco Virtual do Brasil S.A.', '23456789000121'),
+('Banco Centralizado S.A.', '34567890000132'),
+('Banco do Brasil S.A', '20300004857222');
+
+
+-- verificar essa parte: como relacionar com a tabela endereço no código? pq tem q ser iguais 
+INSERT INTO enderecos (cidade, estado, cep, logradouro) VALUES
+('São Paulo', 'São Paulo', '01000000', 'Avenida Paulista 1000'),
+('Rio de Janeiro', 'Rio de Janeiro', '20000000', 'Rua Visconde de Pirajá 500'),
+('Belo Horizonte', 'Minas Gerais', '30100000', 'Avenida Afonso Pena 1500');
+ 
