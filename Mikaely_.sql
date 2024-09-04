@@ -164,8 +164,86 @@ INSERT INTO telefone_empresas (ddd, telefone) VALUES
 ('065', '912312312'),
 ('067', '999123123'); 
  
+ -- criando dados da tabela banco e suas relações
+ 
+ CREATE TABLE bancos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    cnpj VARCHAR(14) NOT NULL
+);
+
+INSERT INTO bancos (nome, cnpj) VALUES
+('Banco Fictício Nacional S.A.', '12345678000110'),
+('Banco Virtual do Brasil S.A.', '23456789000121'),
+('Banco Centralizado S.A.', '34567890000132');
+
+INSERT INTO telefones (ddd, telefone) VALUES
+('011', '912345678'),
+('021', '987654321'),
+('031', '976543210');
+
+INSERT INTO enderecos (cidade, estado, cep, logradouro) VALUES
+('São Paulo', 'São Paulo', '01000000', 'Avenida Paulista 1000'),
+('Rio de Janeiro', 'Rio de Janeiro', '20000000', 'Rua Visconde de Pirajá 500'),
+('Belo Horizonte', 'Minas Gerais', '30100000', 'Avenida Afonso Pena 1500');
  
  
- 
- 
- 
+ -- criando dados da tabela associados ( 60 rendas)
+ INSERT INTO rendas (valor) VALUES
+(1500.12),
+(3200.54),
+(2500.67),
+(4120.98),
+(3500.43),
+(2230.65),
+(1875.13),
+(4100.97),
+(3333.33),
+(2999.99),
+(5000.00),
+(2789.87),
+(3100.11),
+(4500.22),
+(4000.33),
+(3800.44),
+(4250.55),
+(2900.66),
+(3400.77),
+(4600.88),
+(4800.99),
+(3700.12),
+(3150.23),
+(4500.34),
+(4700.45),
+(3300.56),
+(3650.67),
+(3950.78),
+(4225.89),
+(4320.90),
+(2888.01),
+(3777.12),
+(3999.23),
+(4125.34),
+(4390.45),
+(2550.56),
+(2890.67),
+(3190.78),
+(3440.89),
+(3690.90),
+(4125.01),
+(4300.12),
+(4700.23),
+(3800.34),
+(2950.45),
+(3150.56),
+(3999.67),
+(4230.78),
+(4560.89),
+(4850.90),
+(4900.01),
+(4999.12),
+(5100.23),
+(5300.34),
+(5500.45),
+(5700.56),
+(5900.67);
