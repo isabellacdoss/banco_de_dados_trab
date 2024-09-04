@@ -1,8 +1,10 @@
+ drop database teste;
+ 
 -- Criando banco de dados:
-CREATE DATABASE IF NOT EXISTS previdencia;
+CREATE DATABASE teste;
 
 -- Criando tabelas:
-USE previdencia;
+USE teste;
 
 -- Criando a tabela endereço:
 CREATE TABLE endereco (
@@ -68,7 +70,7 @@ FOREIGN KEY (codEND) REFERENCES endereco(codEND);
 -- Adicionando CPF como chave estrangeira de cliente em funcionário:
 ALTER TABLE funcionario
 ADD CONSTRAINT FK_funcionario_cliente
-FOREIGN KEY (CPF) REFERENCES cliente (CPF);
+FOREIGN KEY (CPF_fun) REFERENCES cliente (CPF);
 -- Adicionando CNPJ como chave estrangeira de empresa em funcionário:
 ALTER TABLE funcionario 
 ADD CONSTRAINT FK_funcionario_empresa
@@ -76,7 +78,7 @@ FOREIGN KEY (CNPJ_empresa) REFERENCES empresa(CNPJ);
 
  -- Criando tabela de previdencia_privada:
  CREATE TABLE previdenciaP(
-	codPrevidenica INT(5) PRIMARY KEY,
+	codPrevidencia INT(5) PRIMARY KEY,
 	aporte DECIMAL(7,2) NOT NULL,
 	data_de_inicio DATE NOT NULL,
 	banco_CNPJ CHAR(14) NOT NULL,
@@ -87,7 +89,7 @@ ALTER TABLE previdenciaP
 ADD CONSTRAINT FK_previdenciaP_cliente
 FOREIGN KEY (cliente_CPF) REFERENCES cliente(CPF);
 -- Adicionando chave estrangeira CNPJ de banco em previdencia_privada:
-ALTER TABLE previdenciaprivada
+ALTER TABLE previdenciaP
 ADD CONSTRAINT FK_previdenciaP_banco
 FOREIGN KEY (banco_CNPJ) REFERENCES banco(CNPJ);
 
@@ -158,7 +160,7 @@ CREATE TABLE administracao(
 	valorpago_empresa DECIMAL (10,2),
 	valorpago_funcionario DECIMAL(10,2),
 	codFundo INT(30) NOT NULL,
-	FOREIGN KEY (codfundo) REFERENCES fundo_de_pensao(codfundo)
+	FOREIGN KEY (codfundo) REFERENCES fundopensao(codfundo)
     );
  -- Adicionando chave estrangeira codFUNDO de fundopensao em administracao:   
 ALTER TABLE administracao
