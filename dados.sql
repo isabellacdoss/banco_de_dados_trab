@@ -1,6 +1,7 @@
+USE teste;
 
 -- Inserindo dados na tabela cliente (80 clientes):
-INSERT INTO cliente (CPF, nome, rg) 
+INSERT INTO cliente (CPF, nome, RG) 
 VALUES 
 ('12434522238', 'Maria Clara Monteiro Santos', '2458885'), 
 ('08207241730', 'Luiz Filippe Marcon Pereira', '9992358'), 
@@ -85,7 +86,7 @@ VALUES
 
 -- Inserindo dados na tabela endereco (102 endereços):
 insert into endereco 
-(cidade, cep, logradouro, estado)
+(cidade, CEP, logradouro, estado)
 VALUES  ('Vitória', 29000094, 'Rua das Castanheiras, n°45', 'Espírito Santo'),
 ('Vitória', 29030074, 'Rua Oliva, n° 20', 'Espírito Santo'),
 ('Vitória', 29010001, 'Centro, Avenida Jerônimo Monteiro, n° 43', 'Espírito Santo'),
@@ -185,7 +186,7 @@ VALUES  ('Vitória', 29000094, 'Rua das Castanheiras, n°45', 'Espírito Santo')
 ('São Carlos', 13560000, 'Rua Episcopal, n° 456', 'São Paulo');
 
 -- Inserindo dados da tabela associados (56 rendas):
- INSERT INTO associados 
+ INSERT INTO associado
  (renda) 
  VALUES (15500.12),
 (9200.54),
@@ -273,7 +274,7 @@ VALUES  ('Vitória', 29000094, 'Rua das Castanheiras, n°45', 'Espírito Santo')
 (4900.01);
 
 -- Inserindo dados da tabela empresa (12 empresas):
-INSERT INTO empresa(cnpj, nome) 
+INSERT INTO empresa(CNPJ, nome) 
 VALUES
 ('12345678000191', 'Empresa Alfa LTDA'),
 ('23456789000182', 'Beta Consultoria e Associados'),
@@ -289,19 +290,19 @@ VALUES
 ('90123456000181', 'Carvalho Consultoria Jurídica');
 
 -- Inserindo dados na tabela banco (4 bancos);
-INSERT INTO bancos (nome, cnpj) VALUES
+INSERT INTO bancos (nome, CNPJ) VALUES
 ('Banco Fictício Nacional S.A.', '12345678000110'),
 ('Banco Virtual do Brasil S.A.', '23456789000121'),
 ('Banco Centralizado S.A.', '34567890000132'),
 ('Banco do Brasil S.A', '20300004857222');
 
 -- Criando porcentagem das taxas:
-INSERT INTO taxa(administrao, carregamento, saida) VALUES 
+INSERT INTO taxa(administracao, carregamento, saida) VALUES 
 (0.02, 0.04, 0.05);   -- Esse valor foi transformado de porcengem para decimal
 
 -- Insira os dados na tabela previdenciaP:
 INSERT INTO previdenciaP
-(aporte, data_de_inicio) 
+(aporte, datainicio) 
 VALUES
 (300.00, '2019-04-15'),
 (500.00, '2003-09-23'),
@@ -362,14 +363,15 @@ VALUES
 (285.00, '2009-01-23'),
 (290.00, '2023-05-31');
 
-INSERT INTO associacao (CNPJ, nome) VALUES
+-- Inserindo dados na tabela associacao:
+INSERT INTO associacao (CNPJ_assoc, nome) VALUES
 ('12345678000195', 'Abrap'),
 ('98765432000176', 'Sindap'),
 ('11223344000181', 'APEPE'),
 ('55667788000190', 'ANAP');
 
--- criando dados da tabela administração
-INSERT INTO adminstracao(valorpago_empresa, valorpago_funcionario) VALUES
+-- Criando dados da tabela administração:
+INSERT INTO adminstracao(valorempresa, valorfuncionario) VALUES
 (0.05, 0.03);
 
 
