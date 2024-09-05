@@ -1,5 +1,3 @@
--- criando dados da tabela associação
--- Inserção dos dados
 -- TODOS OS DADOS JUNTOS
 
 -- DADOS  TABELA EMPRESA 
@@ -66,7 +64,9 @@ INSERT INTO associacao (CNPJ, nome) VALUES
 ('11223344000181', 'APEPE'),
 ('55667788000190', 'ANAP');
 
--- crinaod dados da tabela administração
+-- DADOS TABELA ADMINISTRAÇÃO
+
+
 INSERT INTO adminstracao(valorpago_empresa, valorpago_funcionario) VALUES
 ('25000,00', '60,00');
 
