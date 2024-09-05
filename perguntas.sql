@@ -44,20 +44,20 @@
 	select avg(aporte*12) from previdenciaP;
 
 -- Qual a taxa incidente sobre cada aporte de cliente?
-	select previdenciaP.cpf_cliente, prevideciaP.aporte, (taxas.administracao+taxas.carregamento+taxas.saida) from previdenciaP inner join taxas
+	select previdenciaP.cliente_CPF, prevideciaP.aporte, (taxas.administracao+taxas.carregamento+taxas.saida) from previdenciaP inner join taxas
 	on previdenciaP.codPrevidencia = taxas.codPrevidencia;
 
 -- Quando cada cliente iniciou sua contribuição à previdência privada?
 	SELECT cliente.nome, previdenciaP.datainicio
-	from cliente left join previdenciaP on cliente.cpf = previdenciaP.cpf_cliente;
+	from cliente left join previdenciaP on cliente.CPF = previdenciaP.cliente_CPF;
 
 -- Qual somatório do fundo de pensão de cada cliente funcionário?
 	select sum((funcionario.salario*administracao.valorempresa)+(funcionario.salario*administracao.valorfuncionario)), administracao.CPF_fun
-	from funcionario inner join administracao on funcionario.cpf=administracao.CPF_fun;
+	from funcionario inner join administracao on funcionario.CPF = administracao.CPF_fun;
 
 -- Em qual estado reside a maior parte dos clientes?
-	select endereço.estado inner join cliente on endereço.codEND = cliente.codEND
-	group by endereço.estado;
+	select endereco.estado from endereco inner join cliente on endereco.codEND = cliente.codEND
+	group by endereco.estado;
 	
 -- Qual valor total acumulado por cada plano/taxa de previdência privada?
 	select sum(aporte), contribuicao from previdenciaP
