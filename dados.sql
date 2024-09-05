@@ -1,5 +1,5 @@
 
--- Inserindo dados na tabela cliente (78 clientes):
+-- Inserindo dados na tabela cliente (80 clientes):
 INSERT INTO cliente (CPF, nome, rg) 
 VALUES 
 ('12434522238', 'Maria Clara Monteiro Santos', '2458885'), 
@@ -76,17 +76,18 @@ VALUES
 ('57813579124', 'Sara Oliveira Nascimento', '8473925'),
 ('68924680235', 'Hugo Martins Silva', '6394827'),
 ('90935791346', 'Paulo Henrique Gomes', '7482935'),
-('80146802457', 'Renata Duarte Lima', '9374826'),
 ('91299993568', 'Adriana Sousa Ferreira', '8374926'),
 ('02368024679', 'Matheus Rodrigues Pinto', '9374815'),
-('13488835780', 'Isabela Rocha Souza', '8374923');
+('13488835780', 'Isabela Rocha Souza', '8374923'),
+('47474747474', 'Joaquim Augusto Munhoz', '2223323'),
+('93039449000', 'Mariana Almeida Cardoso', '9993345'),
+('55554444444', 'Isabela Pontes Torres', '8797879');
 
 -- Inserindo dados na tabela endereco (102 endereços):
 insert into endereco 
 (cidade, cep, logradouro, estado)
 VALUES  ('Vitória', 29000094, 'Rua das Castanheiras, n°45', 'Espírito Santo'),
 ('Vitória', 29030074, 'Rua Oliva, n° 20', 'Espírito Santo'),
-('Rio de Janeiro', 13344635, 'Rua Emilio Lopes Cruz Junior, n° 30', 'Rio de Janeiro'),
 ('Vitória', 29010001, 'Centro, Avenida Jerônimo Monteiro, n° 43', 'Espírito Santo'),
 ('Itapemirim', 29738946, 'Rua Marinho, n°83', 'Espírito Santo'),
 ('Itabela', 45848000, 'Rua Daniel Branco, n° 57', 'Bahia'),
@@ -95,8 +96,6 @@ VALUES  ('Vitória', 29000094, 'Rua das Castanheiras, n°45', 'Espírito Santo')
 ('Itamaraju', 29743746, 'Pau-brasil, n°29', 'Bahia'),
 ('Itapemirim', 29330000, 'Rua projetada, s/n', 'Espírito Santo'),
 ('Cachoeiro de Itapemirim', 84526475, 'Centro, Rua Costa Pereira, n° 71', 'Espírito Santo'),
-('Cachoeiro de Itapemirim', 23242400, 'Independência, Rua Vasco da Gama, n° 33', 'Espírito Santo'),
-('Serra', 29169661, 'Rua Lima, n° 25', 'Espírito Santo'),
 ('Cariacica', 29155016, 'Rua Aildo Daniel Muqui, n° 1811', 'Espírito Santo'),
 ('Afonso Claúdio', 29546370, 'Rua Monte Belo, n°833', 'Espírito Santo'),
 ('São Paulo', 24285379, 'Rua Jardins, n°10', 'São Paulo'),
@@ -180,13 +179,10 @@ VALUES  ('Vitória', 29000094, 'Rua das Castanheiras, n°45', 'Espírito Santo')
 ('Santa Maria', 97105000, 'Rua Venâncio Aires, n° 456', 'Rio Grande do Sul'),
 ('Maringá', 87010000, 'Avenida Brasília, n° 789', 'Paraná'),
 ('Joinville', 89201000, 'Rua XV de Novembro, n° 123', 'Santa Catarina'),
-('Itajaí', 88301000, 'Avenida Nereu Ramos, n° 987', 'Santa Catarina'),
 ('Uberaba', 38000000, 'Rua Coronel Ferreira, n° 123', 'Minas Gerais'),
 ('Uberlândia', 38400000, 'Rua Dom Pedro I, n° 789', 'Minas Gerais'),
 ('Ribeirão Preto', 14010000, 'Avenida Presidente Vargas, n° 789', 'São Paulo'),
-('São Carlos', 13560000, 'Rua Episcopal, n° 456', 'São Paulo'),
-('Campinas', 13000000, 'Avenida Francisco Glicério, n° 789', 'São Paulo'),
-('Sorocaba', 18010000, 'Avenida Afonso Vergueiro, n° 890', 'São Paulo');
+('São Carlos', 13560000, 'Rua Episcopal, n° 456', 'São Paulo');
 
 -- Inserindo dados da tabela associados (56 rendas):
  INSERT INTO associados 
@@ -231,11 +227,11 @@ VALUES  ('Vitória', 29000094, 'Rua das Castanheiras, n°45', 'Espírito Santo')
 -- Inserindo dados da tabela funcionários:
  INSERT INTO funcionario
  (salario) 
- VALUES (2500,00),
+ VALUES (2500.00),
 (5000.50),
 (10065.89),
-(3560,00),
-(23250,00),
+(3560.00),
+(23250.00),
 (11000.50),
 (12000.45),
 (3022.00),
