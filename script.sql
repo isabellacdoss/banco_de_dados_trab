@@ -157,8 +157,8 @@ FOREIGN KEY (CNPJ_associacao) REFERENCES associacao(CNPJ);
 -- Criando tabela administracao:
 CREATE TABLE administracao(
 	CPF_func CHAR(11) PRIMARY KEY,
-	valorpago_empresa DECIMAL (10,2),
-	valorpago_funcionario DECIMAL(10,2),
+	valorpago_empresa DECIMAL (5,2),
+	valorpago_funcionario DECIMAL(5,2),
 	codFundo INT(30) NOT NULL,
 	FOREIGN KEY (codfundo) REFERENCES fundopensao(codfundo)
     );
