@@ -1,22 +1,23 @@
-drop database teste;
-
-create database teste;
-use teste;
-
-create table clientes (cpf char(11));
-create table empresas (cnpj char(14));
-create table associacao (cnpj char(14));
-
-insert into clientes values ('12345678910');
-insert into empresas values ('12345678910234');
-insert into associacao  values ('12345678910234');
-
-CREATE TABLE juncao_cpf_cnpj (cpf_cnpj	varchar (14))
-SELECT cpf as cpf_cnpj
+CREATE TABLE juncao_CPF_CNPJ (COD int auto_increment primary key , CPF_CNPJ	varchar (14))
+SELECT CPF as CPF_CNPJ
 FROM clientes
 UNION ALL
-SELECT cnpj from empresas
+SELECT CNPJ from empresas
 union all 
-select cnpj from associacao;
+select CNPJ from associacao
+union all
+select CNPJ from banco;
 
-select * from juncao_cpf_cnpj;
+update banco
+set codEND = (select COD from juncao_CPF_CNPJ where banco.CNPJ = juncao_CPF_CNPJ.CPF_CNPJ);
+update cliente 
+set codEND = (select COD from juncao_CPF_CNPJ where cliente.CPF = juncao_CPF_CNPJ.CPF_CNPJ);
+update associacao
+set codEND = (select COD from juncao_CPF_CNPJ where associacao.CNPJ = juncao_CPF_CNPJ.CPF_CNPJ);
+update empresa
+set codEND = (select COD from juncao_CPF_CNPJ where empresa.CNPJ = juncao_CPF_CNPJ.CPF_CNPJ);
+update funcionario
+set codEND = (select COD from juncao_CPF_CNPJ where funcionario.CPF_fun = juncao_CPF_CNPJ.CPF_CNPJ);
+update associado 
+set codEND = (select COD from juncao_CPF_CNPJ where associado.CPF_ass = juncao_CPF_CNPJ.CPF_CNPJ);
+
