@@ -272,7 +272,7 @@ VALUES  ('Vitória', 29000094, 'Rua das Castanheiras, n°45', 'Espírito Santo')
 (4850.90),
 (4900.01);
 
--- Inserindo dados da tabela empresa (16 rendas):
+-- Inserindo dados da tabela empresa (12 empresas):
 INSERT INTO empresa(cnpj, nome) 
 VALUES
 ('12345678000191', 'Empresa Alfa LTDA'),
@@ -288,18 +288,18 @@ VALUES
 ('67890123000158', 'Lage Comércio Exterior'),
 ('90123456000181', 'Carvalho Consultoria Jurídica');
 
--- Inserindo dados na tabela banco;
+-- Inserindo dados na tabela banco (4 bancos);
 INSERT INTO bancos (nome, cnpj) VALUES
 ('Banco Fictício Nacional S.A.', '12345678000110'),
 ('Banco Virtual do Brasil S.A.', '23456789000121'),
 ('Banco Centralizado S.A.', '34567890000132'),
 ('Banco do Brasil S.A', '20300004857222');
 
--- criando porcentagem das taxas
+-- Criando porcentagem das taxas:
 INSERT INTO taxa(administrao, carregamento, saida) VALUES 
 (0.02, 0.04, 0.05);   -- Esse valor foi transformado de porcengem para decimal
 
--- Insira os dados na tabela previdenciaP
+-- Insira os dados na tabela previdenciaP:
 INSERT INTO previdenciaP
 (aporte, data_de_inicio) 
 VALUES
