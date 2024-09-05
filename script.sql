@@ -96,9 +96,9 @@ FOREIGN KEY (banco_CNPJ) REFERENCES banco(CNPJ);
 -- Criando tabela taxas:
 CREATE TABLE taxas(
 	codPrevidencia INT PRIMARY KEY,
-	adminstracao INT(30) NOT NULL,
-	carregamento INT(30) NOT NULL,
-	saida INT(30) NOT NULL
+	adminstracao DEC(4,2) NOT NULL,
+	carregamento DEC(4,2) NOT NULL,
+	saida DEC(4,2) NOT NULL
 );
 -- Adicionando chave estrangeira codPrevidencia de previdencia_privada em taxas:
 ALTER TABLE taxas
