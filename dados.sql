@@ -362,3 +362,14 @@ VALUES
 (285.00, '2009-01-23'),
 (290.00, '1987-05-31');
 
+INSERT INTO associacao (CNPJ, nome) VALUES
+('12345678000195', 'Abrap'),
+('98765432000176', 'Sindap'),
+('11223344000181', 'APEPE'),
+('55667788000190', 'ANAP');
+
+-- criando dados da tabela administração
+INSERT INTO adminstracao(valorpago_empresa, valorpago_funcionario) VALUES
+(0.05, 0.03);
+
+
