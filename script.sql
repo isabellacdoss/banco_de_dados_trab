@@ -136,7 +136,7 @@ FOREIGN KEY (CNPJ_assoc) REFERENCES associacao(CNPJ);
 
 -- Criando tabela fundo:
 CREATE TABLE fundopensao(
-	codFundo INT(30) PRIMARY KEY,
+	codFundo INT(30) AUTO_INCREMENT PRIMARY KEY,
 	codPrevidencia INT(40) NOT NULL,
     CNPJ_empresa CHAR(14),
     CNPJ_associacao CHAR(14)
