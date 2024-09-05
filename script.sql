@@ -11,7 +11,7 @@ CREATE TABLE endereco (
 	codEND INT AUTO_INCREMENT PRIMARY KEY, 
 	cidade VARCHAR(30) NOT NULL, 
 	CEP INT(8) NOT NULL, 
-	logradouro VARCHAR(30) NOT NULL,
+	logradouro VARCHAR(60) NOT NULL,
 	estado VARCHAR(20) NOT NULL
 );
 
@@ -78,7 +78,7 @@ FOREIGN KEY (CNPJ_empresa) REFERENCES empresa(CNPJ);
 
  -- Criando tabela de previdencia_privada:
  CREATE TABLE previdenciaP(
-	codPrevidencia INT(5) PRIMARY KEY,
+	codPrevidencia INT(5) AUTO_INCREMENT PRIMARY KEY,
 	aporte DECIMAL(7,2) NOT NULL,
 	datainicio DATE NOT NULL,
 	banco_CNPJ CHAR(14) NOT NULL,
@@ -93,18 +93,12 @@ ALTER TABLE previdenciaP
 ADD CONSTRAINT FK_previdenciaP_banco
 FOREIGN KEY (banco_CNPJ) REFERENCES banco(CNPJ);
 
--- Alterando a tabela previdenciaP e adicionando a coluna contribuicao
-ALTER TABLE previdenciaP
+-- Alterando a tabela funcionario e previdenciaP e adicionando a coluna contribuicao
+ALTER TABLE funcionario
 ADD COLUMN contribuicao DECIMAL(5,3) NOT NULL;
 
-UPDATE previdenciaP
-SET contribuicao = 0.075 where salario < 2826.65;
-UPDATE previdenciaP
-SET contribuicao = 0.15 where 2826.66 < salario < 3751.05;
-UPDATE previdenciaP 
-SET contribuicao = 0.225 where 3751.06 < salario < 4664.68;
-UPDATE previdenciaP
-SET  contribuicao = 0.275 where salario > 4664.69;
+alter table previdenciaP
+add column contribuicao decimal(5,3) not null;
 
 -- Criando tabela taxas:
 CREATE TABLE taxas(
@@ -130,7 +124,6 @@ ALTER TABLE associacao
 ADD CONSTRAINT FK_associacao_endereco
 FOREIGN KEY (codEND) REFERENCES endereco(codEND);
 
-
 -- Criando tabela associado:
 CREATE TABLE associado(
 	CPF_ass CHAR(11) PRIMARY KEY,
@@ -146,6 +139,10 @@ FOREIGN KEY (codEND) REFERENCES endereco(codEND);
 ALTER TABLE associado
 ADD CONSTRAINT FK_associado_associacao
 FOREIGN KEY (CNPJ_assoc) REFERENCES associacao(CNPJ);
+-- Adionando chave entrangeira em CPF_ass:
+ALTER TABLE associado 
+ADD CONSTRAINT FK_associado_cliente
+FOREIGN KEY (CPF_ass) REFERENCES cliente(CPF);
 
 -- Criando tabela fundo:
 CREATE TABLE fundopensao(
@@ -181,5 +178,5 @@ ADD CONSTRAINT FK_administracao_fundopensao
 FOREIGN KEY (codFundo) REFERENCES fundopensao(codFundo);
 
  
- 
+
  

@@ -1,91 +1,93 @@
+-- Criando tabelas:
+USE teste;
 
 -- Inserindo dados na tabela cliente (80 clientes):
-INSERT INTO cliente (CPF, nome, rg) 
+INSERT INTO cliente (CPF, nome, RG, CNPJ_banco) 
 VALUES 
-('12434522238', 'Maria Clara Monteiro Santos', '2458885'), 
-('08207241730', 'Luiz Filippe Marcon Pereira', '9992358'), 
-('18745467799', 'Carlos Oliveira Carvalho', '2784773'),
-('67414913722', 'Jaci de Melo Carvalho', '8429462'),
-('89471401472', 'Juliana Marianelli Cardoso', '7246247'),
-('47925629493', 'Sidney Moreira Camargo', '1383644'),
-('73736458543', 'Luan Roberto Silva', '00283847'), 
-('61256839333', 'Guilherme Nogueira Martins', '74824212'),
-('47246845394', 'Diego Martins Silva', '36572937'),
-('75658924375', 'Raquel Souza Nogueira', '4892332'),
-('28462434345', 'Sarah Quintiliano Serafim', '2646483'),
-('98563790547', 'Alexandra Natalli de Mattos', '3748253'),
-('82435639356', 'Maria Clara Zambe Marbela', '4823562'),
-('47823462586', 'Izadora Ponte Chaves', '3273529'), 
-('27325945778', 'Sabrina Satto Libard', '7485245'),
-('49823562792', 'Larissa Manoella Ferreira', '1254025'),
-('85720952235', 'Juliano Floss Pontes', '8257290'),
-('87542963852', 'Silvio Santos Almeira', '8942895'),
-('59758947855', 'Marina Sena Monte', '8914725'),
-('82974623535', 'Luísa Carvalho Marcon', '9837423'),
-('93726528353', 'Romilda Guess Santos', '4923975'),
-('28365729475', 'João Vitor Joanis', '8424365'),
-('28462395424', 'Renatta Silva da Costa', '1949278'),
-('84628759833', 'Mário Motta Santos', '7948365'),
-('23875622458', 'Henrique Reis Abreu', '8295239'),
-('24723985392', 'Flávia Borges Menezes', '8294573'),
-('17582437465', 'Ícaro Buarque Souza', '8295749'),
-('28346345853', 'Pablo Marçal Oliveira', '2975256'),
-('24862394242', 'Tabata Amaral Dias', '2897359'),
-('19284623833', 'Felipe Rodrigues Lima', '5866797'),
-('94869201324', 'Claúdia Maria Passos', '2938429'),
-('32424242422', 'Augusto Horas Pinheiro', '9124726'),
-('89246271514', 'Mikaely Queiroz Barreto', '7336635'),
-('72474638463', 'Milena Carvalho Scherrer', '0923374'),
-('10498274222', 'José Leonardo Cabral Moreira', '00120344'),
-('14263749566', 'Lucas Oliveira Belo', '02143257'),
-('03746563829', 'Gracianete Marcon Zambe', '9272446'),
-('00273593790', 'Gilson Almeida dos Santos', '2227364'),
-('93939344444', 'Aureci Silva Cardoso', '6636646'),
-('44444433443', 'Sabrina Barros Azevedo', '3333333'),
-('55555555555', 'Vitória Costa Fontes', '2222222'),
-('66663636363', 'Lidia Algum Rocha', '8888888'),
-('37377373737', 'Thiago Holanda Braga', '2828282'),
-('90909090909', 'Pablo Nogueira Alves', '3535353'),
-('34029290000', 'Arthur Carvalho Marianelli', '1010100'),
-('07070707076', 'Gabriel dos Anjos Matos', '0238364'),
-('98765456789', 'Sofia Macedo Guimarães', '4646463'),
-('43456545678', 'Diego Martins Decothe', '7777777'),
-('13579246801', 'Gabriela Souza Pinto', '4728361'),
-('24681357902', 'Rafael Lima Duarte', '5849273'),
-('35792468013', 'Amanda Castro Silva', '3958472'),
-('46813579124', 'Fernando Oliveira Santos', '4829375'),
-('57924680235', 'Beatriz Costa Almeida', '5648392'),
-('68035791346', 'Pedro Henrique Martins', '6739482'),
-('79146802457', 'Natália Moura Ribeiro', '8392457'),
-('90257913568', 'Ricardo Lopes Carvalho', '7381924'),
-('01368024679', 'Vanessa Ferreira Lima', '6384291'),
-('12479135780', 'Felipe Costa Souza', '9472853'),
-('23580246891', 'Mariana Alves Rocha', '7482915'),
-('34691222902', 'Thiago Nascimento Pereira', '8493726'),
-('45702468013', 'Eduardo Gomes Barros', '5738294'),
-('56813879124', 'Carolina Fernandes Dias', '7394825'),
-('68846002305', 'André Silva Oliveira', '6384927'),
-('79000791346', 'Fernanda Duarte Mendes', '9482736'),
-('98986802457', 'Lucas Rocha Nogueira', '8394725'),
-('91257917768', 'Juliana Araújo Lima', '7492831'),
-('99999924679', 'Rodrigo Ribeiro Costa', '6482913'),
-('13479135454', 'Larissa Almeida Ferreira', '9483726'),
-('23333333891', 'Victor Santos Matos', '5738292'),
-('35691357902', 'Camila Barbosa Teixeira', '6473915'),
-('46702468013', 'Gabriel Menezes Silva', '7382914'),
-('57813579124', 'Sara Oliveira Nascimento', '8473925'),
-('68924680235', 'Hugo Martins Silva', '6394827'),
-('90935791346', 'Paulo Henrique Gomes', '7482935'),
-('91299993568', 'Adriana Sousa Ferreira', '8374926'),
-('02368024679', 'Matheus Rodrigues Pinto', '9374815'),
-('13488835780', 'Isabela Rocha Souza', '8374923'),
-('47474747474', 'Joaquim Augusto Munhoz', '2223323'),
-('93039449000', 'Mariana Almeida Cardoso', '9993345'),
-('55554444444', 'Isabela Pontes Torres', '8797879');
+('12434522238', 'Maria Clara Monteiro Santos', '2458885','12345678000110'), 
+('08207241730', 'Luiz Filippe Marcon Pereira', '9992358','23456789000121'), 
+('18745467799', 'Carlos Oliveira Carvalho', '2784773','34567890000132'),
+('67414913722', 'Jaci de Melo Carvalho', '8429462','12345678000110'),
+('89471401472', 'Juliana Marianelli Cardoso', '7246247','20300004857222'),
+('47925629493', 'Sidney Moreira Camargo', '1383644','34567890000132'),
+('73736458543', 'Luan Roberto Silva', '00283847','12345678000110'), 
+('61256839333', 'Guilherme Nogueira Martins', '74824212','20300004857222'),
+('47246845394', 'Diego Martins Silva', '36572937','23456789000121'),
+('75658924375', 'Raquel Souza Nogueira', '4892332','20300004857222'),
+('28462434345', 'Sarah Quintiliano Serafim', '2646483','23456789000121'),
+('98563790547', 'Alexandra Natalli de Mattos', '3748253','12345678000110'),
+('82435639356', 'Maria Clara Zambe Marbela', '4823562','12345678000110'),
+('47823462586', 'Izadora Ponte Chaves', '3273529','12345678000110'), 
+('27325945778', 'Sabrina Satto Libard', '7485245','34567890000132'),
+('49823562792', 'Larissa Manoella Ferreira', '1254025','34567890000132'),
+('85720952235', 'Juliano Floss Pontes', '8257290','12345678000110'),
+('87542963852', 'Silvio Santos Almeira', '8942895','12345678000110'),
+('59758947855', 'Marina Sena Monte', '8914725','20300004857222'),
+('82974623535', 'Luísa Carvalho Marcon', '9837423','23456789000121'),
+('93726528353', 'Romilda Guess Santos', '4923975','34567890000132'),
+('28365729475', 'João Vitor Joanis', '8424365','23456789000121'),
+('28462395424', 'Renatta Silva da Costa', '1949278','12345678000110'),
+('84628759833', 'Mário Motta Santos', '7948365','12345678000110'),
+('23875622458', 'Henrique Reis Abreu', '8295239','20300004857222'),
+('24723985392', 'Flávia Borges Menezes', '8294573','12345678000110'),
+('17582437465', 'Ícaro Buarque Souza', '8295749','34567890000132'),
+('28346345853', 'Pablo Marçal Oliveira', '2975256','12345678000110'),
+('24862394242', 'Tabata Amaral Dias', '2897359','20300004857222'),
+('19284623833', 'Felipe Rodrigues Lima', '5866797','34567890000132'),
+('94869201324', 'Claúdia Maria Passos', '2938429','12345678000110'),
+('32424242422', 'Augusto Horas Pinheiro', '9124726','34567890000132'),
+('89246271514', 'Mikaely Queiroz Barreto', '7336635','20300004857222'),
+('72474638463', 'Milena Carvalho Scherrer', '0923374','34567890000132'),
+('10498274222', 'José Leonardo Cabral Moreira', '00120344','34567890000132'),
+('14263749566', 'Lucas Oliveira Belo', '02143257','20300004857222'),
+('03746563829', 'Gracianete Marcon Zambe', '9272446','12345678000110'),
+('00273593790', 'Gilson Almeida dos Santos', '2227364','12345678000110'),
+('93939344444', 'Aureci Silva Cardoso', '6636646','20300004857222'),
+('44444433443', 'Sabrina Barros Azevedo', '3333333','23456789000121'),
+('55555555555', 'Vitória Costa Fontes', '2222222','23456789000121'),
+('66663636363', 'Lidia Algum Rocha', '8888888','20300004857222'),
+('37377373737', 'Thiago Holanda Braga', '2828282','34567890000132'),
+('90909090909', 'Pablo Nogueira Alves', '3535353','20300004857222'),
+('34029290000', 'Arthur Carvalho Marianelli', '1010100','20300004857222'),
+('07070707076', 'Gabriel dos Anjos Matos', '0238364','20300004857222'),
+('98765456789', 'Sofia Macedo Guimarães', '4646463','20300004857222'),
+('43456545678', 'Diego Martins Decothe', '7777777','12345678000110'),
+('13579246801', 'Gabriela Souza Pinto', '4728361','12345678000110'),
+('24681357902', 'Rafael Lima Duarte', '5849273','12345678000110'),
+('35792468013', 'Amanda Castro Silva', '3958472','20300004857222'),
+('46813579124', 'Fernando Oliveira Santos', '4829375','23456789000121'),
+('57924680235', 'Beatriz Costa Almeida', '5648392','23456789000121'),
+('68035791346', 'Pedro Henrique Martins', '6739482','34567890000132'),
+('79146802457', 'Natália Moura Ribeiro', '8392457','34567890000132'),
+('90257913568', 'Ricardo Lopes Carvalho', '7381924','34567890000132'),
+('01368024679', 'Vanessa Ferreira Lima', '6384291','12345678000110'),
+('12479135780', 'Felipe Costa Souza', '9472853','20300004857222'),
+('23580246891', 'Mariana Alves Rocha', '7482915','12345678000110'),
+('34691222902', 'Thiago Nascimento Pereira', '8493726','20300004857222'),
+('45702468013', 'Eduardo Gomes Barros', '5738294','34567890000132'),
+('56813879124', 'Carolina Fernandes Dias', '7394825','20300004857222'),
+('68846002305', 'André Silva Oliveira', '6384927','20300004857222'),
+('79000791346', 'Fernanda Duarte Mendes', '9482736','20300004857222'),
+('98986802457', 'Lucas Rocha Nogueira', '8394725','23456789000121'),
+('91257917768', 'Juliana Araújo Lima', '7492831','23456789000121'),
+('99999924679', 'Rodrigo Ribeiro Costa', '6482913','20300004857222'),
+('13479135454', 'Larissa Almeida Ferreira', '9483726','34567890000132'),
+('23333333891', 'Victor Santos Matos', '5738292','34567890000132'),
+('35691357902', 'Camila Barbosa Teixeira', '6473915','12345678000110'),
+('46702468013', 'Gabriel Menezes Silva', '7382914','12345678000110'),
+('57813579124', 'Sara Oliveira Nascimento', '8473925','12345678000110'),
+('68924680235', 'Hugo Martins Silva', '6394827','23456789000121'),
+('90935791346', 'Paulo Henrique Gomes', '7482935','12345678000110'),
+('91299993568', 'Adriana Sousa Ferreira', '8374926','20300004857222'),
+('02368024679', 'Matheus Rodrigues Pinto', '9374815','12345678000110'),
+('13488835780', 'Isabela Rocha Souza', '8374923','20300004857222'),
+('47474747474', 'Joaquim Augusto Munhoz', '2223323','23456789000121'),
+('93039449000', 'Mariana Almeida Cardoso', '9993345','20300004857222'),
+('55554444444', 'Isabela Pontes Torres', '8797879','23456789000121');
 
 -- Inserindo dados na tabela endereco (102 endereços):
 insert into endereco 
-(cidade, cep, logradouro, estado)
+(cidade, CEP, logradouro, estado)
 VALUES  ('Vitória', 29000094, 'Rua das Castanheiras, n°45', 'Espírito Santo'),
 ('Vitória', 29030074, 'Rua Oliva, n° 20', 'Espírito Santo'),
 ('Vitória', 29010001, 'Centro, Avenida Jerônimo Monteiro, n° 43', 'Espírito Santo'),
@@ -185,7 +187,7 @@ VALUES  ('Vitória', 29000094, 'Rua das Castanheiras, n°45', 'Espírito Santo')
 ('São Carlos', 13560000, 'Rua Episcopal, n° 456', 'São Paulo');
 
 -- Inserindo dados da tabela associados (56 rendas):
- INSERT INTO associados 
+ INSERT INTO associado
  (renda) 
  VALUES (15500.12),
 (9200.54),
@@ -271,9 +273,18 @@ VALUES  ('Vitória', 29000094, 'Rua das Castanheiras, n°45', 'Espírito Santo')
 (4560.89),
 (4850.90),
 (4900.01);
+-- inserindo dados sobre salario em funcionario:
+UPDATE funcionario
+SET contribuicao = 0.075 where salario < 2826.65;
+UPDATE funcionario
+SET contribuicao = 0.15 where 2826.66 < salario < 3751.05;
+UPDATE funcionario
+SET contribuicao = 0.225 where 3751.06 < salario < 4664.68;
+UPDATE funcionario
+SET  contribuicao = 0.275 where salario > 4664.69;
 
 -- Inserindo dados da tabela empresa (12 empresas):
-INSERT INTO empresa(cnpj, nome) 
+INSERT INTO empresa(CNPJ, nome) 
 VALUES
 ('12345678000191', 'Empresa Alfa LTDA'),
 ('23456789000182', 'Beta Consultoria e Associados'),
@@ -289,19 +300,19 @@ VALUES
 ('90123456000181', 'Carvalho Consultoria Jurídica');
 
 -- Inserindo dados na tabela banco (4 bancos);
-INSERT INTO bancos (nome, cnpj) VALUES
+INSERT INTO bancos (nome, CNPJ) VALUES
 ('Banco Fictício Nacional S.A.', '12345678000110'),
 ('Banco Virtual do Brasil S.A.', '23456789000121'),
 ('Banco Centralizado S.A.', '34567890000132'),
 ('Banco do Brasil S.A', '20300004857222');
 
 -- Criando porcentagem das taxas:
-INSERT INTO taxa(administrao, carregamento, saida) VALUES 
+INSERT INTO taxa(administracao, carregamento, saida) VALUES 
 (0.02, 0.04, 0.05);   -- Esse valor foi transformado de porcengem para decimal
 
 -- Insira os dados na tabela previdenciaP:
 INSERT INTO previdenciaP
-(aporte, data_de_inicio) 
+(aporte, datainicio) 
 VALUES
 (300.00, '2019-04-15'),
 (500.00, '2003-09-23'),
@@ -361,15 +372,19 @@ VALUES
 (275.00, '2021-11-04'),
 (285.00, '2009-01-23'),
 (290.00, '2023-05-31');
+-- inserindo dados sobre contribuicao em previdenciaP:
+update previdenciaP
+SET contribuicao = (select contribuicao from funcionario where funcionario.CPF_fun = previdenciaP.cliente_CPF);
 
-INSERT INTO associacao (CNPJ, nome) VALUES
+-- Inserindo dados na tabela associacao:
+INSERT INTO associacao (CNPJ_assoc, nome) VALUES
 ('12345678000195', 'Abrap'),
 ('98765432000176', 'Sindap'),
 ('11223344000181', 'APEPE'),
 ('55667788000190', 'ANAP');
 
--- criando dados da tabela administração
-INSERT INTO adminstracao(valorpago_empresa, valorpago_funcionario) VALUES
+-- Criando dados da tabela administração:
+INSERT INTO adminstracao(valorempresa, valorfuncionario) VALUES
 (0.05, 0.03);
 
 
