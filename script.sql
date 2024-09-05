@@ -1,10 +1,10 @@
- drop database previdencia;
+ drop database teste;
  
 -- Criando banco de dados:
-CREATE DATABASE previdencia;
+CREATE DATABASE teste;
 
 -- Criando tabelas:
-USE previdencia;
+USE teste;
 
 -- Criando a tabela endereço:
 CREATE TABLE endereco (
@@ -94,17 +94,18 @@ ADD CONSTRAINT FK_previdenciaP_banco
 FOREIGN KEY (banco_CNPJ) REFERENCES banco(CNPJ);
 
 -- Alterando a tabela previdenciaP e adicionando a coluna contribuicao
-ALTER TABLE previdenciaP
+ALTER TABLE funcionario
 ADD COLUMN contribuicao DECIMAL(5,3) NOT NULL;
 
-UPDATE previdenciaP
+UPDATE funcionario
 SET contribuicao = 0.075 where salario < 2826.65;
-UPDATE previdenciaP
+UPDATE funcionario
 SET contribuicao = 0.15 where 2826.66 < salario < 3751.05;
-UPDATE previdenciaP 
+UPDATE funcionario
 SET contribuicao = 0.225 where 3751.06 < salario < 4664.68;
-UPDATE previdenciaP
+UPDATE funcionario
 SET  contribuicao = 0.275 where salario > 4664.69;
+
 
 -- Criando tabela taxas:
 CREATE TABLE taxas(
