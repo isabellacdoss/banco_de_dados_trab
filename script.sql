@@ -1,10 +1,10 @@
- drop database teste;
+ drop database previdencia;
  
 -- Criando banco de dados:
-CREATE DATABASE teste;
+CREATE DATABASE previdencia;
 
 -- Criando tabelas:
-USE teste;
+USE previdencia;
 
 -- Criando a tabela endereço:
 CREATE TABLE endereco (
@@ -78,7 +78,7 @@ FOREIGN KEY (CNPJ_empresa) REFERENCES empresa(CNPJ);
 
  -- Criando tabela de previdencia_privada:
  CREATE TABLE previdenciaP(
-	codPrevidencia INT(5) PRIMARY KEY,
+	codPrevidencia INT(5) AUTO_INCREMENT PRIMARY KEY,
 	aporte DECIMAL(7,2) NOT NULL,
 	datainicio DATE NOT NULL,
 	banco_CNPJ CHAR(14) NOT NULL,
@@ -130,7 +130,6 @@ ALTER TABLE associacao
 ADD CONSTRAINT FK_associacao_endereco
 FOREIGN KEY (codEND) REFERENCES endereco(codEND);
 
-
 -- Criando tabela associado:
 CREATE TABLE associado(
 	CPF_ass CHAR(11) PRIMARY KEY,
@@ -146,6 +145,10 @@ FOREIGN KEY (codEND) REFERENCES endereco(codEND);
 ALTER TABLE associado
 ADD CONSTRAINT FK_associado_associacao
 FOREIGN KEY (CNPJ_assoc) REFERENCES associacao(CNPJ);
+-- Adionando chave entrangeira em CPF_ass:
+ALTER TABLE associado 
+ADD CONSTRAINT FK_associado_cliente
+FOREIGN KEY (CPF_ass) REFERENCES cliente(CPF);
 
 -- Criando tabela fundo:
 CREATE TABLE fundopensao(
@@ -181,5 +184,5 @@ ADD CONSTRAINT FK_administracao_fundopensao
 FOREIGN KEY (codFundo) REFERENCES fundopensao(codFundo);
 
  
- 
+
  
