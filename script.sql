@@ -80,7 +80,7 @@ FOREIGN KEY (CNPJ_empresa) REFERENCES empresa(CNPJ);
  CREATE TABLE previdenciaP(
 	codPrevidencia INT(5) PRIMARY KEY,
 	aporte DECIMAL(7,2) NOT NULL,
-	data_de_inicio DATE NOT NULL,
+	datainicio DATE NOT NULL,
 	banco_CNPJ CHAR(14) NOT NULL,
 	cliente_CPF CHAR(11) NOT NULL
 );
@@ -157,8 +157,8 @@ FOREIGN KEY (CNPJ_associacao) REFERENCES associacao(CNPJ);
 -- Criando tabela administracao:
 CREATE TABLE administracao(
 	CPF_func CHAR(11) PRIMARY KEY,
-	valorpago_empresa DECIMAL (5,2),
-	valorpago_funcionario DECIMAL(5,2),
+	valorempresa DECIMAL (5,2),
+	valorfuncionario DECIMAL(5,2),
 	codFundo INT(30) NOT NULL,
 	FOREIGN KEY (codfundo) REFERENCES fundopensao(codfundo)
     );
