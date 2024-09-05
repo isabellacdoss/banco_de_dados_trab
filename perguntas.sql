@@ -11,40 +11,40 @@
 -- Qual a média de salários desses funcionários por empresa?
 	SELECT AVG(funcionario.salario) as media, empresa.nome
 	FROM funcionario inner join empresa ON 	funcionario.CNPJ_empresa=empresa.CNPJ
-	group by nome empresa
+	group by empresa
 	order by media desc;
 
 -- Quais funcionários recebem até dois salários mínimos?
-	SELECT nome, salario from funcionário
+	SELECT nome, salario from funcionario
 	WHERE salario <= 2824.00
 	order by salario;
 
 -- Qual a soma total da renda de associados distribuída por associação?
-	SELECT associação.nome, sum(associado.renda)
-	from associação inner join associado ON (associação.CNPJ = associado.CNPJ_associacao)
-	group by associação.nome;
+	SELECT associacao.nome, sum(associado.renda)
+	from associacao inner join associado ON (associacao.CNPJ = associado.CNPJ_assoc)
+	group by associacao.nome;
 
 -- Existe algum funcionário/associado que não possui um plano de previdência privada?
 	select * from cliente
-	where cpf not in (select cpf from previdenciaP);
+	where CPF not in (select CPF from previdenciaP);
 
 -- Qual a diferença entre salários e seus aportes?
-	SELECT funcionário.salario, previdenciaP.aporte, funcionário.salario - previdenciaP.aporte
-	from funcionário inner join previcenciaP ON
-	funcionário.CPF = previdenciaP.CPF;
+	SELECT funcionario.salario, previdenciaP.aporte, funcionario.salario - previdenciaP.aporte
+	from funcionario inner join previcenciaP ON
+	funcionario.CPF = previdenciaP.CPF;
 
 --  ⁠Quais associações (top 3) mais possuem contribuintes?
-	SELECT associação.nome from associação inner join 	
-	fundopensao ON associação.CNPJ = fundopensao.CNPJ_associacao 
-	group by associação.nome
-	order by desc
+	SELECT associacao.nome from associacao inner join 	
+	fundopensao ON associacao.CNPJ = fundopensao.CNPJ_associacao 
+	group by associacao.nome
+	order by associacao.nome
 	limit 3;
 	
 -- Média anual de contribuições em previdência privada.
 	select avg(aporte*12) from previdenciaP;
 
 -- Qual a taxa incidente sobre cada aporte de cliente?
-	select previdenciaP.cpf_cliente, previdênciaP.aporte, 	(taxas.administracao+taxas.carregamento+taxas.saida) from previdenciaP inner join taxas
+	select previdenciaP.cpf_cliente, prevideciaP.aporte, (taxas.administracao+taxas.carregamento+taxas.saida) from previdenciaP inner join taxas
 	on previdenciaP.codPrevidencia = taxas.codPrevidencia;
 
 -- Quando cada cliente iniciou sua contribuição à previdência privada?
@@ -52,8 +52,8 @@
 	from cliente left join previdenciaP on cliente.cpf = previdenciaP.cpf_cliente;
 
 -- Qual somatório do fundo de pensão de cada cliente funcionário?
-	select sum((funcionário.salario*administracao.valorempresa)+(funcionário.salario*administracao.valorfuncionario)), administracao.cpf_func
-	from funcionário inner join administração on funcionário.cpf=administração.cpf_func;
+	select sum((funcionario.salario*administracao.valorempresa)+(funcionario.salario*administracao.valorfuncionario)), administracao.CPF_fun
+	from funcionario inner join administracao on funcionario.cpf=administracao.CPF_fun;
 
 -- Em qual estado reside a maior parte dos clientes?
 	select endereço.estado inner join cliente on endereço.codEND = cliente.codEND
@@ -64,11 +64,9 @@
 	group by contribuicao;
 	
  -- Em quais anos (top 2) ocorreram maiores números de cadastros de clientes na previdência privada?
-	select data_de_inicio, count(codPrevidencia) from previdenciaP 
-	group by data_de_inicio
+	select datainicio, count(codPrevidencia) from previdenciaP 
+	group by datainicio
 	order by count(codPrevidencia) desc
 	limit 2;
 
--- teste dos codigos
--- adicionar os dados das chaves estrangeiras
--- montar pdf bonitinho
+
