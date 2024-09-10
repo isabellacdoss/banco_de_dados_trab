@@ -25,7 +25,7 @@
 
 -- 6. Quais clientes possuem previdência?   
 	select * from cliente
-	where CPF not in (select CPF from previdenciaP);
+	where CPF in (select CPF from previdenciaP);
 
 -- 7. Qual a diferença entre salários e seus aportes?
 	SELECT funcionario.salario, previdenciaP.aporte, funcionario.salario - previdenciaP.aporte
