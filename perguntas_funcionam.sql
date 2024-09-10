@@ -56,8 +56,9 @@
 	from cliente left join previdenciaP on cliente.CPF = previdenciaP.cliente_CPF;
 
 -- 12. Qual somatório do fundo de pensão de cada cliente funcionário?  
-	select sum((funcionario.salario*administracao.valorempresa)+(funcionario.salario*administracao.valorfuncionario)), administracao.CPF_fun
-	from funcionario inner join administracao on funcionario.CPF = administracao.CPF_fun;
+	select sum((funcionario.salario*administracao.valorempresa)+(funcionario.salario*administracao.valorfuncionario)) as fundo_pensao, administracao.CPF_fun
+	from funcionario inner join administracao on funcionario.CPF_fun = administracao.CPF_fun
+    group by administracao.CPF_fun;
 
 -- 13. Em qual estado reside a maior parte dos clientes? 
 	select endereco.estado, count(cliente.CPF) from endereco inner join cliente on endereco.codEND = cliente.codEND
