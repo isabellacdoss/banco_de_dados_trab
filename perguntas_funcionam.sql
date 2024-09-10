@@ -29,9 +29,9 @@
 
 -- 7. Qual a diferença entre salários e seus aportes?
 	SELECT funcionario.salario, previdenciaP.aporte, funcionario.salario - previdenciaP.aporte
-	from funcionario inner join previcenciaP ON
-	funcionario.CPF = previdenciaP.CPF;
-
+	from funcionario inner join previdenciaP ON
+	funcionario.CPF_fun = previdenciaP.cliente_CPF;
+    
 -- 8. ⁠Quais associações mais possuem contribuintes? 
 	SELECT pj.nome, count(funcionario.CPF_fun) from pj inner join 	
 	funcionario ON pj.CNPJ = funcionario.CNPJ_empresa 
